@@ -6571,7 +6571,8 @@ function cloudSnapshot() {
       repo: cfg.repo,
       branch: cfg.branch,
       path: cfg.path,
-      auto: cfg.auto !== false
+      auto: cfg.auto !== false,
+      token: cfg.token
     } : null,
     data: JSON.parse(JSON.stringify({
       inspections: DB.inspections,
@@ -6663,18 +6664,55 @@ function clearDataCache() {
   });
 }
 
-async function saveToCloud() {
-  const cfg = readCloudForm();
-  if (!cfg) return;
-  cloudSaveConfig(cfg);
-  cloudInitUi();
+async function saveAndReload(cfg) {
   const ok = await saveCloudData(cfg, false);
-  if (!ok) return;
+  if (!ok) return false;
   toast('已保存到 GitHub，正在清理本地缓存并重新加载…', 'ok');
   setTimeout(function () {
     clearDataCache();
     location.reload();
   }, 1400);
+  return true;
+}
+
+async function saveToCloud() {
+  const cfg = readCloudForm();
+  if (!cfg) return;
+  cloudSaveConfig(cfg);
+  cloudInitUi();
+  return saveAndReload(cfg);
+}
+
+async function syncToGit() {
+  const cfg = cloudConfig();
+  if (!cfg || !cfg.token) {
+    toast('请先在「云同步」里配置数据仓库和 Token', 'warn');
+    openCloudModal();
+    return;
+  }
+  return saveAndReload(cfg);
+}
+
+function mountSyncButtons() {
+  const panels = document.querySelectorAll('.panel');
+  Array.prototype.forEach.call(panels, function (panel) {
+    const head = panel.querySelector('.panel-head');
+    if (!head) return;
+    let actions = head.querySelector('.panel-actions');
+    if (!actions) {
+      actions = document.createElement('div');
+      actions.className = 'panel-actions';
+      head.appendChild(actions);
+    }
+    if (actions.querySelector('.sync-git-btn')) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-secondary sync-git-btn';
+    btn.title = '把当前数据同步到 GitHub';
+    btn.innerHTML = '<svg class="ico"><use href="#i-upload"></use></svg>同步到 Git';
+    btn.addEventListener('click', syncToGit);
+    actions.appendChild(btn);
+  });
 }
 
 function scheduleCloudSave() {
@@ -6776,7 +6814,7 @@ function restoreCloudMeta(meta) {
     repo: meta.repo,
     branch: meta.branch || 'main',
     path: meta.path || 'data/ops-data.json',
-    token: '',
+    token: meta.token || '',
     auto: meta.auto !== false
   });
   cloudInitUi();
@@ -6834,6 +6872,7 @@ function init() {
   renderConfig();
 
   bindEvents();
+  mountSyncButtons();
   cloudInitUi();
   initRepoData();
 

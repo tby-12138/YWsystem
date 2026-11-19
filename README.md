@@ -107,9 +107,9 @@ GitHub → Settings → Developer settings → Personal access tokens → Fine-g
 - 两个人同时编辑同一份数据仍可能冲突；这是给个人使用设计的。
 - 要真正多用户/实时数据库，请用 Python 后端 + SQLite，Git 只放代码和备份。
 
-### 配置也会写进 Git
+### 配置和 Token 也会写进 Git（免输入模式）
 
-保存时数据文件顶层会多一个 `cloud` 字段：
+保存时数据文件顶层会多一个 `cloud` 字段，按你选择的免输入模式，**Token 也会写进去**：
 
 ```json
 {
@@ -117,16 +117,35 @@ GitHub → Settings → Developer settings → Personal access tokens → Fine-g
   "repo": "YWsystem-data",
   "branch": "main",
   "path": "data/ops-data.json",
-  "auto": true
+  "auto": true,
+  "token": "github_pat_..."
 }
 ```
 
-只包含非敏感配置，**不包含 Token**；Token 仍然只在本机浏览器 localStorage。如果本机配置丢了，页面会从数据文件的 `cloud` 字段恢复这些配置，Token 需要重新填。
+页面启动时会自动恢复这些配置，不需要再输入。
+
+**但必须知道边界：**
+
+- Token 等于数据仓库的读写权限；**任何能看到这个文件的人都能读写你的数据**。
+- 如果数据仓库是私有的 `YWsystem-data`，新设备上的页面没有 Token 就读不到这个私有文件，所以**仍然要输入一次 Token**。
+- 只有把数据仓库改成公开的页面仓库 `YWsystem`，页面才能从公开的 `data/ops-data.json` 直接读到配置和 Token，做到**任何设备都免输入**；代价是数据公开。
+- 要“私有数据 + 任何设备都免输入”，只能上后端：Token 放服务端，页面调接口，不暴露 Token。
+
+因此，想真正换设备免输入，建议：数据仓库填 **`YWsystem`**（公开页面仓库），Token 给 **`YWsystem` 的 Contents 读写**；保存后 `data/ops-data.json` 公开，任何设备打开都不用输入。真实 IP、密码不要放公开仓库。
 
 ### 保存后的行为
 
 - 点「保存到 GitHub」成功 → 提示「已保存到 GitHub，正在清理本地缓存并重新加载…」→ 清掉本地数据缓存 → 自动刷新；云配置和 Token 保留，刷新后从 Git 重新加载。
 - 自动保存（改完约 1.5 秒）→ 提示「已自动保存到 GitHub」，**不刷新**页面，避免打断编辑。需要干净重载时点「保存到 GitHub」。
+
+### 每个页面的「同步到 Git」
+
+巡检、运维记录、问题汇总、系统更新、IP 地址、系统账号、常用软件、基础配置，每个页面右上角操作区都有一枚 **「同步到 Git」** 按钮：
+
+- 已配置仓库和 Token：直接保存到 GitHub → 提示 → 清数据缓存 → 自动刷新；
+- 未配置：提示并打开「云同步」弹窗，填好后再点。
+
+和顶栏「云同步」里的「保存到 GitHub」是同一套逻辑；按钮只是让你在任意页面都能直接同步。
 
 ---
 
