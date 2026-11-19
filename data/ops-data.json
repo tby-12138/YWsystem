@@ -1,0 +1,2645 @@
+{
+  "app": "ops-management",
+  "version": 1,
+  "updatedAt": "2026-11-19T02:46:27.548Z",
+  "data": {
+    "inspections": [
+      {
+        "id": 57,
+        "system": "一卡通",
+        "subsystem": "乌干达金贾一卡通",
+        "date": "2026-11-19",
+        "time": "2026-11-19 12:53:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "异常"
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "system": "MES",
+        "subsystem": "塔什干钢铁MES",
+        "date": "2026-11-19",
+        "time": "2026-11-19 12:35:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "system": "NS",
+        "subsystem": "NS域名解析",
+        "date": "2026-11-19",
+        "time": "2026-11-19 10:29:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "域名解析服务",
+            "result": "正常"
+          },
+          {
+            "name": "证书有效期",
+            "result": "正常"
+          },
+          {
+            "name": "反向代理状态",
+            "result": "正常"
+          },
+          {
+            "name": "日志服务运行",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "system": "MES",
+        "subsystem": "塔什干钢铁MES",
+        "date": "2026-11-18",
+        "time": "2026-11-18 12:01:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "异常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-11-18",
+        "time": "2026-11-18 09:21:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-11-17",
+        "time": "2026-11-17 12:42:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-11-17",
+        "time": "2026-11-17 11:59:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "system": "MES",
+        "subsystem": "乌干达金贾302厂MES",
+        "date": "2026-11-16",
+        "time": "2026-11-16 11:02:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "system": "MES",
+        "subsystem": "塔什干钢铁MES",
+        "date": "2026-11-15",
+        "time": "2026-11-15 13:01:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-11-14",
+        "time": "2026-11-14 15:29:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "system": "堡垒机",
+        "subsystem": "堡垒机审计节点",
+        "date": "2026-11-14",
+        "time": "2026-11-14 11:15:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "异常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "system": "一卡通",
+        "subsystem": "国内一卡通平台",
+        "date": "2026-11-14",
+        "time": "2026-11-14 08:43:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-11-13",
+        "time": "2026-11-13 11:22:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "system": "MES",
+        "subsystem": "乌干达金贾302厂MES",
+        "date": "2026-11-12",
+        "time": "2026-11-12 15:11:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "system": "OA",
+        "subsystem": "OA移动端",
+        "date": "2026-11-12",
+        "time": "2026-11-12 14:39:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "system": "一卡通",
+        "subsystem": "国内一卡通平台",
+        "date": "2026-11-12",
+        "time": "2026-11-12 11:37:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "system": "NS",
+        "subsystem": "NS域名解析",
+        "date": "2026-11-11",
+        "time": "2026-11-11 12:37:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "域名解析服务",
+            "result": "正常"
+          },
+          {
+            "name": "证书有效期",
+            "result": "正常"
+          },
+          {
+            "name": "反向代理状态",
+            "result": "正常"
+          },
+          {
+            "name": "日志服务运行",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "system": "NS",
+        "subsystem": "NS反向代理",
+        "date": "2026-11-11",
+        "time": "2026-11-11 11:21:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "域名解析服务",
+            "result": "正常"
+          },
+          {
+            "name": "证书有效期",
+            "result": "正常"
+          },
+          {
+            "name": "反向代理状态",
+            "result": "正常"
+          },
+          {
+            "name": "日志服务运行",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "system": "MES",
+        "subsystem": "洛南工厂MES",
+        "date": "2026-11-11",
+        "time": "2026-11-11 09:09:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "system": "一卡通",
+        "subsystem": "国内一卡通平台",
+        "date": "2026-11-10",
+        "time": "2026-11-10 16:32:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-11-09",
+        "time": "2026-11-09 15:01:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "system": "MES",
+        "subsystem": "乌干达莫罗托MES",
+        "date": "2026-11-09",
+        "time": "2026-11-09 14:28:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-11-09",
+        "time": "2026-11-09 13:11:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "system": "OA",
+        "subsystem": "OA移动端",
+        "date": "2026-11-08",
+        "time": "2026-11-08 15:50:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "异常"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "system": "MES",
+        "subsystem": "乌干达莫罗托MES",
+        "date": "2026-11-08",
+        "time": "2026-11-08 11:32:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "异常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "system": "MES",
+        "subsystem": "洛南工厂MES",
+        "date": "2026-11-08",
+        "time": "2026-11-08 11:19:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "异常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "异常"
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "system": "一卡通",
+        "subsystem": "国内一卡通平台",
+        "date": "2026-11-07",
+        "time": "2026-11-07 13:57:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "system": "OA",
+        "subsystem": "OA移动端",
+        "date": "2026-11-06",
+        "time": "2026-11-06 10:03:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "异常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "system": "一卡通",
+        "subsystem": "国内一卡通平台",
+        "date": "2026-11-05",
+        "time": "2026-11-05 08:36:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "异常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-11-04",
+        "time": "2026-11-04 15:54:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-11-03",
+        "time": "2026-11-03 16:44:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-11-03",
+        "time": "2026-11-03 13:24:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "异常"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "system": "一卡通",
+        "subsystem": "费尔干纳一卡通",
+        "date": "2026-11-03",
+        "time": "2026-11-03 08:31:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-11-02",
+        "time": "2026-11-02 14:33:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "system": "OA",
+        "subsystem": "OA移动端",
+        "date": "2026-11-02",
+        "time": "2026-11-02 11:35:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "system": "MES",
+        "subsystem": "乌干达金贾302厂MES",
+        "date": "2026-11-01",
+        "time": "2026-11-01 15:10:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "异常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "system": "OA",
+        "subsystem": "OA移动端",
+        "date": "2026-11-01",
+        "time": "2026-11-01 12:10:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "system": "堡垒机",
+        "subsystem": "堡垒机审计节点",
+        "date": "2026-10-31",
+        "time": "2026-10-31 12:26:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "system": "堡垒机",
+        "subsystem": "堡垒机审计节点",
+        "date": "2026-10-31",
+        "time": "2026-10-31 09:57:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "system": "堡垒机",
+        "subsystem": "堡垒机审计节点",
+        "date": "2026-10-30",
+        "time": "2026-10-30 13:31:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "system": "MES",
+        "subsystem": "乌干达金贾302厂MES",
+        "date": "2026-10-30",
+        "time": "2026-10-30 12:10:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "异常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "异常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "system": "NS",
+        "subsystem": "NS反向代理",
+        "date": "2026-10-29",
+        "time": "2026-10-29 16:24:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "域名解析服务",
+            "result": "正常"
+          },
+          {
+            "name": "证书有效期",
+            "result": "正常"
+          },
+          {
+            "name": "反向代理状态",
+            "result": "正常"
+          },
+          {
+            "name": "日志服务运行",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "system": "OA",
+        "subsystem": "OA移动端",
+        "date": "2026-10-29",
+        "time": "2026-10-29 16:01:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "system": "一卡通",
+        "subsystem": "乌干达金贾一卡通",
+        "date": "2026-10-29",
+        "time": "2026-10-29 13:59:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "异常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "system": "一卡通",
+        "subsystem": "国内一卡通平台",
+        "date": "2026-10-28",
+        "time": "2026-10-28 12:50:00",
+        "reporter": "王乐乐",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "system": "堡垒机",
+        "subsystem": "堡垒机审计节点",
+        "date": "2026-10-28",
+        "time": "2026-10-28 10:34:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "system": "一卡通",
+        "subsystem": "乌干达金贾一卡通",
+        "date": "2026-10-28",
+        "time": "2026-10-28 08:52:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "system": "OA",
+        "subsystem": "OA办公平台",
+        "date": "2026-10-27",
+        "time": "2026-10-27 12:34:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "Web 服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "流程引擎服务",
+            "result": "正常"
+          },
+          {
+            "name": "附件存储服务",
+            "result": "正常"
+          },
+          {
+            "name": "用户同步服务",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "system": "堡垒机",
+        "subsystem": "堡垒机审计节点",
+        "date": "2026-10-26",
+        "time": "2026-10-26 13:22:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "system": "MES",
+        "subsystem": "洛南工厂MES",
+        "date": "2026-10-26",
+        "time": "2026-10-26 08:10:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "异常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-10-25",
+        "time": "2026-10-25 13:14:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "正常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "system": "NS",
+        "subsystem": "NS反向代理",
+        "date": "2026-10-25",
+        "time": "2026-10-25 13:02:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "域名解析服务",
+            "result": "正常"
+          },
+          {
+            "name": "证书有效期",
+            "result": "正常"
+          },
+          {
+            "name": "反向代理状态",
+            "result": "正常"
+          },
+          {
+            "name": "日志服务运行",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "system": "堡垒机",
+        "subsystem": "堡垒机主节点",
+        "date": "2026-10-24",
+        "time": "2026-10-24 13:30:00",
+        "reporter": "田佳旭",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "登录审计服务",
+            "result": "正常"
+          },
+          {
+            "name": "权限同步状态",
+            "result": "异常"
+          },
+          {
+            "name": "会话录制服务",
+            "result": "正常"
+          },
+          {
+            "name": "系统资源占用",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "system": "NS",
+        "subsystem": "NS域名解析",
+        "date": "2026-10-24",
+        "time": "2026-10-24 12:05:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "域名解析服务",
+            "result": "正常"
+          },
+          {
+            "name": "证书有效期",
+            "result": "异常"
+          },
+          {
+            "name": "反向代理状态",
+            "result": "正常"
+          },
+          {
+            "name": "日志服务运行",
+            "result": "异常"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "system": "一卡通",
+        "subsystem": "乌干达金贾一卡通",
+        "date": "2026-10-23",
+        "time": "2026-10-23 12:34:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "system": "一卡通",
+        "subsystem": "费尔干纳一卡通",
+        "date": "2026-10-23",
+        "time": "2026-10-23 11:51:00",
+        "reporter": "张志远",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "制卡服务状态",
+            "result": "正常"
+          },
+          {
+            "name": "读卡器通讯状态",
+            "result": "正常"
+          },
+          {
+            "name": "门禁数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "订单接口连通性",
+            "result": "正常"
+          },
+          {
+            "name": "数据库运行状态",
+            "result": "正常"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "system": "MES",
+        "subsystem": "洛南工厂MES",
+        "date": "2026-10-23",
+        "time": "2026-10-23 10:37:00",
+        "reporter": "李明",
+        "remark": "",
+        "templateId": null,
+        "templateName": "",
+        "images": [],
+        "items": [
+          {
+            "name": "生产数据采集服务",
+            "result": "正常"
+          },
+          {
+            "name": "能源模块数据同步",
+            "result": "正常"
+          },
+          {
+            "name": "报表服务状态",
+            "result": "异常"
+          },
+          {
+            "name": "数据库连接状态",
+            "result": "正常"
+          },
+          {
+            "name": "磁盘空间使用率",
+            "result": "正常"
+          }
+        ]
+      }
+    ],
+    "templates": {
+      "一卡通": [
+        "制卡服务状态",
+        "读卡器通讯状态",
+        "门禁数据同步",
+        "订单接口连通性",
+        "数据库运行状态"
+      ],
+      "MES": [
+        "生产数据采集服务",
+        "能源模块数据同步",
+        "报表服务状态",
+        "数据库连接状态",
+        "磁盘空间使用率"
+      ],
+      "NS": [
+        "域名解析服务",
+        "证书有效期",
+        "反向代理状态",
+        "日志服务运行"
+      ],
+      "OA": [
+        "Web 服务状态",
+        "流程引擎服务",
+        "附件存储服务",
+        "用户同步服务"
+      ],
+      "堡垒机": [
+        "登录审计服务",
+        "权限同步状态",
+        "会话录制服务",
+        "系统资源占用"
+      ]
+    },
+    "templateImages": {
+      "一卡通": [],
+      "MES": [],
+      "NS": [],
+      "OA": [],
+      "堡垒机": []
+    },
+    "templateLib": [
+      {
+        "id": 1,
+        "name": "一卡通 默认模板",
+        "system": "一卡通",
+        "items": [
+          "制卡服务状态",
+          "读卡器通讯状态",
+          "门禁数据同步",
+          "订单接口连通性",
+          "数据库运行状态"
+        ],
+        "images": []
+      },
+      {
+        "id": 2,
+        "name": "MES 默认模板",
+        "system": "MES",
+        "items": [
+          "生产数据采集服务",
+          "能源模块数据同步",
+          "报表服务状态",
+          "数据库连接状态",
+          "磁盘空间使用率"
+        ],
+        "images": []
+      },
+      {
+        "id": 3,
+        "name": "NS 默认模板",
+        "system": "NS",
+        "items": [
+          "域名解析服务",
+          "证书有效期",
+          "反向代理状态",
+          "日志服务运行"
+        ],
+        "images": []
+      },
+      {
+        "id": 4,
+        "name": "OA 默认模板",
+        "system": "OA",
+        "items": [
+          "Web 服务状态",
+          "流程引擎服务",
+          "附件存储服务",
+          "用户同步服务"
+        ],
+        "images": []
+      },
+      {
+        "id": 5,
+        "name": "堡垒机 默认模板",
+        "system": "堡垒机",
+        "items": [
+          "登录审计服务",
+          "权限同步状态",
+          "会话录制服务",
+          "系统资源占用"
+        ],
+        "images": []
+      }
+    ],
+    "records": [
+      {
+        "id": 1,
+        "operator": "田佳旭",
+        "sysName": "NS",
+        "date": "2026-11-08",
+        "beforeContent": "账号：zhangwei\n角色：普通用户\n可访问：OA 首页 / 个人事务",
+        "afterContent": "调整为部门管理员，新增审批中心、公告发布权限。\n已同步至堡垒机账号策略。",
+        "company": "烟台万华",
+        "staff": "马丽",
+        "area": "国内",
+        "problemType": "权限调整",
+        "operateNum": 2
+      },
+      {
+        "id": 2,
+        "operator": "张志远",
+        "sysName": "堡垒机",
+        "date": "2026-11-14",
+        "beforeContent": "账号：guoqing\n状态：锁定\n原因：密码连续错误 5 次",
+        "afterContent": "重置密码并解除锁定，已通知本人修改初始密码。\n开启登录异常提醒。",
+        "company": "烟台万华",
+        "staff": "马丽",
+        "area": "国内",
+        "problemType": "账号锁定",
+        "operateNum": 1
+      },
+      {
+        "id": 3,
+        "operator": "王乐乐",
+        "sysName": "MES",
+        "date": "2026-11-12",
+        "beforeContent": "账号：zhangwei\n角色：普通用户\n可访问：OA 首页 / 个人事务",
+        "afterContent": "调整为部门管理员，新增审批中心、公告发布权限。\n已同步至堡垒机账号策略。",
+        "company": "费尔干纳亚新",
+        "staff": "阿卜杜",
+        "area": "国外",
+        "problemType": "权限调整",
+        "operateNum": 1
+      },
+      {
+        "id": 4,
+        "operator": "王乐乐",
+        "sysName": "堡垒机",
+        "date": "2026-10-17",
+        "beforeContent": "接口 /api/card/sync\n平均耗时 5.2s\n超时率 18.4%",
+        "afterContent": "连接池由 20 调整为 50，开启批量同步。\n平均耗时降至 320ms，超时率 0.2%。",
+        "company": "乌干达金贾",
+        "staff": "张伟",
+        "area": "国外",
+        "problemType": "接口超时",
+        "operateNum": 2
+      },
+      {
+        "id": 5,
+        "operator": "李明",
+        "sysName": "OA",
+        "date": "2026-10-11",
+        "beforeContent": "车牌号：40M176QB\n发货单编号：A20260407056\n卡号：0269397762\n状态：已制卡未进场",
+        "afterContent": "客户制卡后未进场，申请作废。\n核对发货单与卡号一致，回收卡片并释放订单占用额度。",
+        "company": "塔什干钢铁",
+        "staff": "李娜",
+        "area": "国外",
+        "problemType": "订单作废",
+        "operateNum": 1
+      },
+      {
+        "id": 6,
+        "operator": "王乐乐",
+        "sysName": "一卡通",
+        "date": "2026-10-25",
+        "beforeContent": "工单 MO-20260512\n报工数量：1200\nMES 入库数量：1180\n差异：20 件",
+        "afterContent": "核对报工记录，确认 20 件为返工未入库。\n补录入库单并同步至 MES，差异归零。",
+        "company": "洛南工厂",
+        "staff": "赵敏",
+        "area": "国内",
+        "problemType": "数据异常",
+        "operateNum": 1
+      },
+      {
+        "id": 7,
+        "operator": "田佳旭",
+        "sysName": "一卡通",
+        "date": "2026-10-28",
+        "beforeContent": "账号：zhangwei\n角色：普通用户\n可访问：OA 首页 / 个人事务",
+        "afterContent": "调整为部门管理员，新增审批中心、公告发布权限。\n已同步至堡垒机账号策略。",
+        "company": "费尔干纳亚新",
+        "staff": "阿卜杜",
+        "area": "国外",
+        "problemType": "权限调整",
+        "operateNum": 1
+      },
+      {
+        "id": 8,
+        "operator": "王乐乐",
+        "sysName": "堡垒机",
+        "date": "2026-11-13",
+        "beforeContent": "车牌号：40M176QB\n发货单编号：A20260407056\n卡号：0269397762\n状态：已制卡未进场",
+        "afterContent": "客户制卡后未进场，申请作废。\n核对发货单与卡号一致，回收卡片并释放订单占用额度。",
+        "company": "乌干达金贾",
+        "staff": "张伟",
+        "area": "国外",
+        "problemType": "订单作废",
+        "operateNum": 2
+      },
+      {
+        "id": 9,
+        "operator": "张志远",
+        "sysName": "NS",
+        "date": "2026-11-16",
+        "beforeContent": "ns 域名 TTL：3600s\n备份周期：每日 02:00\n保留份数：7",
+        "afterContent": "TTL 调整为 300s，备份改为每 6 小时。\n保留份数提升至 14，已校验恢复流程。",
+        "company": "青岛港集团",
+        "staff": "周涛",
+        "area": "国内",
+        "problemType": "配置修改",
+        "operateNum": 2
+      },
+      {
+        "id": 10,
+        "operator": "张志远",
+        "sysName": "MES",
+        "date": "2026-11-07",
+        "beforeContent": "接口 /api/card/sync\n平均耗时 5.2s\n超时率 18.4%",
+        "afterContent": "连接池由 20 调整为 50，开启批量同步。\n平均耗时降至 320ms，超时率 0.2%。",
+        "company": "乌干达金贾",
+        "staff": "张伟",
+        "area": "国外",
+        "problemType": "接口超时",
+        "operateNum": 1
+      },
+      {
+        "id": 11,
+        "operator": "李明",
+        "sysName": "OA",
+        "date": "2026-11-08",
+        "beforeContent": "车牌号：40M176QB\n发货单编号：A20260407056\n卡号：0269397762\n状态：已制卡未进场",
+        "afterContent": "客户制卡后未进场，申请作废。\n核对发货单与卡号一致，回收卡片并释放订单占用额度。",
+        "company": "洛南工厂",
+        "staff": "赵敏",
+        "area": "国内",
+        "problemType": "订单作废",
+        "operateNum": 1
+      },
+      {
+        "id": 12,
+        "operator": "王乐乐",
+        "sysName": "MES",
+        "date": "2026-10-16",
+        "beforeContent": "车牌号：40M176QB\n发货单编号：A20260407056\n卡号：0269397762\n状态：已制卡未进场",
+        "afterContent": "客户制卡后未进场，申请作废。\n核对发货单与卡号一致，回收卡片并释放订单占用额度。",
+        "company": "烟台万华",
+        "staff": "马丽",
+        "area": "国内",
+        "problemType": "订单作废",
+        "operateNum": 1
+      },
+      {
+        "id": 13,
+        "operator": "王乐乐",
+        "sysName": "NS",
+        "date": "2026-10-23",
+        "beforeContent": "OA 首页加载耗时 8.4s\n应用节点 CPU 92%\n慢查询 37 条",
+        "afterContent": "清理历史流程表 120 万条并重建索引。\n首页加载耗时降至 1.1s，CPU 回落至 31%。",
+        "company": "乌干达金贾",
+        "staff": "伊戈尔",
+        "area": "国外",
+        "problemType": "系统卡顿",
+        "operateNum": 1
+      },
+      {
+        "id": 14,
+        "operator": "李明",
+        "sysName": "OA",
+        "date": "2026-10-25",
+        "beforeContent": "ns 域名 TTL：3600s\n备份周期：每日 02:00\n保留份数：7",
+        "afterContent": "TTL 调整为 300s，备份改为每 6 小时。\n保留份数提升至 14，已校验恢复流程。",
+        "company": "青岛港集团",
+        "staff": "周涛",
+        "area": "国内",
+        "problemType": "配置修改",
+        "operateNum": 1
+      },
+      {
+        "id": 15,
+        "operator": "田佳旭",
+        "sysName": "MES",
+        "date": "2026-11-07",
+        "beforeContent": "账号：zhangwei\n角色：普通用户\n可访问：OA 首页 / 个人事务",
+        "afterContent": "调整为部门管理员，新增审批中心、公告发布权限。\n已同步至堡垒机账号策略。",
+        "company": "青岛港集团",
+        "staff": "周涛",
+        "area": "国内",
+        "problemType": "权限调整",
+        "operateNum": 2
+      },
+      {
+        "id": 16,
+        "operator": "王乐乐",
+        "sysName": "MES",
+        "date": "2026-10-21",
+        "beforeContent": "车牌号：40M176QB\n发货单编号：A20260407056\n卡号：0269397762\n状态：已制卡未进场",
+        "afterContent": "客户制卡后未进场，申请作废。\n核对发货单与卡号一致，回收卡片并释放订单占用额度。",
+        "company": "洛南工厂",
+        "staff": "赵敏",
+        "area": "国内",
+        "problemType": "订单作废",
+        "operateNum": 1
+      },
+      {
+        "id": 17,
+        "operator": "张志远",
+        "sysName": "NS",
+        "date": "2026-10-27",
+        "beforeContent": "OA 首页加载耗时 8.4s\n应用节点 CPU 92%\n慢查询 37 条",
+        "afterContent": "清理历史流程表 120 万条并重建索引。\n首页加载耗时降至 1.1s，CPU 回落至 31%。",
+        "company": "费尔干纳亚新",
+        "staff": "余彩进",
+        "area": "国外",
+        "problemType": "系统卡顿",
+        "operateNum": 2
+      },
+      {
+        "id": 18,
+        "operator": "李明",
+        "sysName": "一卡通",
+        "date": "2026-11-15",
+        "beforeContent": "车牌号：40M176QB\n发货单编号：A20260407056\n卡号：0269397762\n状态：已制卡未进场",
+        "afterContent": "客户制卡后未进场，申请作废。\n核对发货单与卡号一致，回收卡片并释放订单占用额度。",
+        "company": "乌干达金贾",
+        "staff": "伊戈尔",
+        "area": "国外",
+        "problemType": "订单作废",
+        "operateNum": 1
+      }
+    ],
+    "problems": [
+      {
+        "id": 1,
+        "sysName": "MES",
+        "title": "生产报表数据延迟，早班无法及时查看",
+        "reporter": "张工",
+        "time": "2026-11-18",
+        "like": 12,
+        "desc": "每日凌晨报表生成延迟约 15 分钟，早班交接时无法及时查看前一日产量。",
+        "solve": "为报表查询字段补充索引，并将定时任务提前至 01:30 预计算，延迟降至 1 分钟内。",
+        "images": []
+      },
+      {
+        "id": 2,
+        "sysName": "一卡通",
+        "title": "制卡订单作废提示「订单不存在」",
+        "reporter": "田佳旭",
+        "time": "2026-11-16",
+        "like": 9,
+        "desc": "客户提交作废申请时提示订单不存在，实际订单已进入制卡队列。作废接口只校验待制卡状态。",
+        "solve": "调整状态校验，兼容「制卡中」状态；对积压的 12 条订单批量补作废。",
+        "images": []
+      },
+      {
+        "id": 3,
+        "sysName": "OA",
+        "title": "审批流节点重复推送待办",
+        "reporter": "张志远",
+        "time": "2026-11-14",
+        "like": 7,
+        "desc": "移动端同一单据收到 6 条相同提醒，消息队列重试缺少幂等键。",
+        "solve": "为待办推送增加「单据号 + 节点 + 接收人」幂等键，并清理重复待办 37 条。",
+        "images": []
+      },
+      {
+        "id": 4,
+        "sysName": "NS",
+        "title": "内网域名解析偶发超时",
+        "reporter": "王乐乐",
+        "time": "2026-11-11",
+        "like": 5,
+        "desc": "上午 9:00-9:30 域名解析耗时超过 3 秒，OA 单点登录出现重试。",
+        "solve": "TTL 由 3600s 调整为 300s，补充备用解析链路健康检查与自动刷新。",
+        "images": []
+      },
+      {
+        "id": 5,
+        "sysName": "堡垒机",
+        "title": "运维审计视频缺失，仅保留操作日志",
+        "reporter": "陈静",
+        "time": "2026-11-07",
+        "like": 4,
+        "desc": "安全抽查发现 3 个会话缺少录屏文件，存储节点剩余空间 12%。",
+        "solve": "扩容录像存储 2TB，改造落盘失败重试机制并接入存储水位告警。",
+        "images": []
+      },
+      {
+        "id": 6,
+        "sysName": "MES",
+        "title": "排产接口偶发 502，前端重复提交",
+        "reporter": "李明",
+        "time": "2026-11-04",
+        "like": 3,
+        "desc": "高峰期排产提交返回 502，前端未做防重复提交，产生 8 张重复工单。",
+        "solve": "网关连接池上限提升至 2000，前端按钮增加提交流程锁，重复工单已合并。",
+        "images": []
+      }
+    ],
+    "updates": [
+      {
+        "id": 1,
+        "sysName": "OA",
+        "updateTime": "2026-11-18",
+        "version": "V3.6.2",
+        "content": "修复审批流节点重复推送问题，为待办消息增加幂等键。",
+        "remark": "停机升级 30 分钟，回滚点 backup-oa-1116",
+        "images": []
+      },
+      {
+        "id": 2,
+        "sysName": "MES",
+        "updateTime": "2026-11-16",
+        "version": "V2.3.1",
+        "content": "优化能源模块数据采集效率，新增报工与入库差异校验。",
+        "remark": "需生产一部确认校验阈值",
+        "images": []
+      },
+      {
+        "id": 3,
+        "sysName": "NS",
+        "updateTime": "2026-11-13",
+        "version": "V1.8.0",
+        "content": "域名 TTL 调整为 300s，补充主备解析链路健康检查。",
+        "remark": "变更窗口 20:00-21:00",
+        "images": []
+      },
+      {
+        "id": 4,
+        "sysName": "一卡通",
+        "updateTime": "2026-11-10",
+        "version": "V4.2.0",
+        "content": "制卡接口升级国密 SM4 加密，新增卡号唯一性校验。",
+        "remark": "旧版客户端需同步升级",
+        "images": []
+      },
+      {
+        "id": 5,
+        "sysName": "堡垒机",
+        "updateTime": "2026-11-07",
+        "version": "V2.1.5",
+        "content": "修复录像落盘失败问题，录像存储扩容至 2TB。",
+        "remark": "安全审计要求 7 日内整改",
+        "images": []
+      },
+      {
+        "id": 6,
+        "sysName": "OA",
+        "updateTime": "2026-11-01",
+        "version": "V3.6.0",
+        "content": "登录页改版，支持企业微信扫码登录，密码策略调整为 90 天。",
+        "remark": "上线首日扫码登录占比 62%",
+        "images": []
+      }
+    ],
+    "ips": [
+      {
+        "id": 1,
+        "categoryId": 1,
+        "level": "高",
+        "sysName": "洛南工厂MES",
+        "deviceName": "生产数据库主服务器",
+        "ip": "192.168.1.100",
+        "account": "root",
+        "password": "Mes@2026#Luonan",
+        "remark": "核心生产库，禁止随意操作",
+        "pwdModifyTime": "2026-10-30"
+      },
+      {
+        "id": 2,
+        "categoryId": 1,
+        "level": "高",
+        "sysName": "乌干达金贾302厂MES",
+        "deviceName": "MES 应用服务器",
+        "ip": "10.0.2.10",
+        "account": "administrator",
+        "password": "Mes@2026#Jinja302",
+        "remark": "乌干达金贾工厂 MES 主应用",
+        "pwdModifyTime": "2026-10-15"
+      },
+      {
+        "id": 3,
+        "categoryId": 1,
+        "level": "中",
+        "sysName": "洛南工厂MES",
+        "deviceName": "报表服务节点",
+        "ip": "10.0.1.21",
+        "account": "mes_report",
+        "password": "Mes@2026#Rpt",
+        "remark": "报表与看板服务",
+        "pwdModifyTime": "2026-11-07"
+      },
+      {
+        "id": 4,
+        "categoryId": 2,
+        "level": "中",
+        "sysName": "费尔干纳一卡通",
+        "deviceName": "一卡通服务器",
+        "ip": "10.0.3.20",
+        "account": "cardadmin",
+        "password": "Card@2026#Fergana",
+        "remark": "费尔干纳亚新工厂一卡通",
+        "pwdModifyTime": "2026-10-05"
+      },
+      {
+        "id": 5,
+        "categoryId": 2,
+        "level": "低",
+        "sysName": "国内一卡通平台",
+        "deviceName": "门禁网关",
+        "ip": "10.0.3.31",
+        "account": "gateway",
+        "password": "Gateway@2026",
+        "remark": "3 号门禁与考勤网关",
+        "pwdModifyTime": "2026-11-11"
+      },
+      {
+        "id": 6,
+        "categoryId": 3,
+        "level": "高",
+        "sysName": "OA办公系统",
+        "deviceName": "OA 应用服务器",
+        "ip": "10.0.4.10",
+        "account": "oa_deploy",
+        "password": "Oa@2026#Deploy",
+        "remark": "双节点部署，负载均衡",
+        "pwdModifyTime": "2026-11-01"
+      },
+      {
+        "id": 7,
+        "categoryId": 3,
+        "level": "中",
+        "sysName": "OA办公系统",
+        "deviceName": "文件服务器",
+        "ip": "10.0.4.15",
+        "account": "fileadmin",
+        "password": "File@2026#OA",
+        "remark": "附件存储，挂载 4TB",
+        "pwdModifyTime": "2026-10-23"
+      },
+      {
+        "id": 8,
+        "categoryId": 1,
+        "level": "高",
+        "sysName": "塔什干钢铁MES",
+        "deviceName": "接口服务器",
+        "ip": "10.0.5.11",
+        "account": "mes_api",
+        "password": "Mes@2026#Api",
+        "remark": "对外接口节点",
+        "pwdModifyTime": "2026-09-30"
+      },
+      {
+        "id": 9,
+        "categoryId": 2,
+        "level": "中",
+        "sysName": "乌干达金贾一卡通",
+        "deviceName": "考勤服务器",
+        "ip": "10.0.2.31",
+        "account": "attenadmin",
+        "password": "Card@2026#Att",
+        "remark": "考勤数据同步",
+        "pwdModifyTime": "2026-09-20"
+      },
+      {
+        "id": 10,
+        "categoryId": 3,
+        "level": "低",
+        "sysName": "堡垒机",
+        "deviceName": "运维审计设备",
+        "ip": "10.0.0.8",
+        "account": "admin",
+        "password": "Bastion@2026",
+        "remark": "双因子认证已开启",
+        "pwdModifyTime": "2026-11-04"
+      }
+    ],
+    "ipCategories": [
+      {
+        "id": 1,
+        "name": "MES系统",
+        "password": "mes@2026",
+        "remark": "覆盖国内 / 海外所有工厂 MES 服务器"
+      },
+      {
+        "id": 2,
+        "name": "一卡通系统",
+        "password": "card@2026",
+        "remark": "门禁、消费与制卡系统"
+      },
+      {
+        "id": 3,
+        "name": "OA办公系统",
+        "password": "oa@2026",
+        "remark": "办公自动化与流程引擎"
+      }
+    ],
+    "accounts": [
+      {
+        "id": 1,
+        "categoryId": 1,
+        "level": "高",
+        "sysName": "洛南工厂MES",
+        "loginName": "admin",
+        "password": "MesAdmin@2026#LN",
+        "outerUrl": "https://mes-luonan.demo.com",
+        "innerUrl": "http://10.0.1.10/mes",
+        "expireTime": "2027-05-18"
+      },
+      {
+        "id": 2,
+        "categoryId": 1,
+        "level": "高",
+        "sysName": "乌干达莫罗托MES",
+        "loginName": "admin_moroto",
+        "password": "MesAdmin@2026#Moroto",
+        "outerUrl": "https://mes-moroto.demo.com",
+        "innerUrl": "http://10.0.2.10/mes",
+        "expireTime": "2027-04-18"
+      },
+      {
+        "id": 3,
+        "categoryId": 2,
+        "level": "中",
+        "sysName": "国内一卡通管理平台",
+        "loginName": "card_admin",
+        "password": "CardAdmin@2026",
+        "outerUrl": "https://card.demo.com",
+        "innerUrl": "http://10.0.3.10",
+        "expireTime": "2027-01-18"
+      },
+      {
+        "id": 4,
+        "categoryId": 2,
+        "level": "中",
+        "sysName": "费尔干纳一卡通",
+        "loginName": "card_op",
+        "password": "CardOp@2026#FG",
+        "outerUrl": "https://card-fg.demo.com",
+        "innerUrl": "http://10.0.3.20",
+        "expireTime": "2026-12-09"
+      },
+      {
+        "id": 5,
+        "categoryId": 3,
+        "level": "高",
+        "sysName": "堡垒机",
+        "loginName": "bastion_admin",
+        "password": "BastionAdmin@2026",
+        "outerUrl": "https://bastion.demo.com",
+        "innerUrl": "http://10.0.0.8",
+        "expireTime": "2027-07-17"
+      },
+      {
+        "id": 6,
+        "categoryId": 3,
+        "level": "中",
+        "sysName": "OA办公系统",
+        "loginName": "oa_admin",
+        "password": "OaAdmin@2026",
+        "outerUrl": "https://oa.demo.com",
+        "innerUrl": "http://10.0.4.10",
+        "expireTime": "2027-02-17"
+      },
+      {
+        "id": 7,
+        "categoryId": 1,
+        "level": "中",
+        "sysName": "塔什干钢铁MES",
+        "loginName": "mes_op",
+        "password": "MesOp@2026#TS",
+        "outerUrl": "https://mes-ts.demo.com",
+        "innerUrl": "http://10.0.5.11",
+        "expireTime": "2027-03-19"
+      },
+      {
+        "id": 8,
+        "categoryId": 3,
+        "level": "低",
+        "sysName": "数据库只读账号",
+        "loginName": "db_reader",
+        "password": "ReadOnly@2026",
+        "outerUrl": "",
+        "innerUrl": "http://10.0.1.100:3306",
+        "expireTime": "2026-12-04"
+      }
+    ],
+    "accountCategories": [
+      {
+        "id": 1,
+        "name": "MES系统",
+        "password": "mes@2026",
+        "remark": "各工厂 MES 系统管理员账号"
+      },
+      {
+        "id": 2,
+        "name": "一卡通系统",
+        "password": "card@2026",
+        "remark": "一卡通平台账号"
+      },
+      {
+        "id": 3,
+        "name": "基础设施",
+        "password": "infra@2026",
+        "remark": "服务器、数据库与堡垒机账号"
+      }
+    ],
+    "soft": [
+      {
+        "id": 1,
+        "name": "PLSQL Developer",
+        "version": "14.0",
+        "downloadUrl": "#",
+        "remark": "Oracle 数据库运维工具",
+        "uploadTime": "2026-08-21"
+      },
+      {
+        "id": 2,
+        "name": "Navicat Premium",
+        "version": "16.3",
+        "downloadUrl": "#",
+        "remark": "多数据库可视化客户端",
+        "uploadTime": "2026-08-31"
+      },
+      {
+        "id": 3,
+        "name": "Xshell",
+        "version": "7.0",
+        "downloadUrl": "#",
+        "remark": "SSH / SFTP 终端工具",
+        "uploadTime": "2026-09-10"
+      },
+      {
+        "id": 4,
+        "name": "WinSCP",
+        "version": "6.3",
+        "downloadUrl": "#",
+        "remark": "SFTP 文件传输工具",
+        "uploadTime": "2026-09-20"
+      },
+      {
+        "id": 5,
+        "name": "向日葵远程控制",
+        "version": "15.5",
+        "downloadUrl": "#",
+        "remark": "远程桌面协助",
+        "uploadTime": "2026-10-05"
+      },
+      {
+        "id": 6,
+        "name": "7-Zip",
+        "version": "24.08",
+        "downloadUrl": "#",
+        "remark": "高压缩比归档工具",
+        "uploadTime": "2026-10-20"
+      },
+      {
+        "id": 7,
+        "name": "Notepad++",
+        "version": "8.6",
+        "downloadUrl": "#",
+        "remark": "轻量文本编辑器",
+        "uploadTime": "2026-10-30"
+      },
+      {
+        "id": 8,
+        "name": "Docker Desktop",
+        "version": "4.31",
+        "downloadUrl": "#",
+        "remark": "容器运行时与镜像管理",
+        "uploadTime": "2026-11-09"
+      }
+    ],
+    "config": [
+      {
+        "id": 1,
+        "key": "巡检提醒时间",
+        "value": "每日 09:00",
+        "remark": "系统自动推送巡检提醒",
+        "modifier": "运维管理员",
+        "modifyTime": "2026-10-20"
+      },
+      {
+        "id": 2,
+        "key": "数据保留天数",
+        "value": "180 天",
+        "remark": "超过保留期的巡检与运维记录自动归档",
+        "modifier": "运维管理员",
+        "modifyTime": "2026-10-25"
+      },
+      {
+        "id": 3,
+        "key": "密码轮换周期",
+        "value": "90 天",
+        "remark": "IP 与系统账号密码到期前提醒",
+        "modifier": "运维管理员",
+        "modifyTime": "2026-10-30"
+      },
+      {
+        "id": 4,
+        "key": "审计日志保留",
+        "value": "365 天",
+        "remark": "敏感操作审计记录保留时长",
+        "modifier": "运维管理员",
+        "modifyTime": "2026-11-04"
+      },
+      {
+        "id": 5,
+        "key": "通知方式",
+        "value": "企业微信 + 邮件",
+        "remark": "巡检异常与密码变更通知渠道",
+        "modifier": "运维管理员",
+        "modifyTime": "2026-11-14"
+      }
+    ],
+    "audits": []
+  }
+}

@@ -1487,6 +1487,74 @@ textarea.input {
 .pwd-toggle:hover { background: var(--panel-soft); color: var(--text); }
 .pwd-toggle .ico { width: 16px; height: 16px; }
 
+
+/* ---------------- 巡检分页 ---------------- */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--panel);
+}
+.pager-info {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pager-pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.pager-btn {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--panel);
+  color: var(--text-2);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.pager-btn:hover:not(:disabled) {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+.pager-btn.active {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+.pager-btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+.pager-ellipsis {
+  padding: 0 4px;
+  color: var(--faint);
+  font-size: 12px;
+}
+.pager-size-wrap { flex: 0 0 auto; }
+.pager-size {
+  width: auto;
+  height: 30px;
+  padding: 0 26px 0 8px;
+  font-size: 12px;
+}
+@media (max-width: 640px) {
+  .pager { align-items: flex-start; }
+  .pager-info { width: 100%; }
+  .pager-pages { order: 3; width: 100%; }
+  .pager-size-wrap { margin-left: auto; }
+}
+
 </style>
 <style>
 /* ================= 视觉升级：深海军蓝顶栏 + 冷调画布 ================= */
@@ -1848,6 +1916,7 @@ body {
           <tbody id="inspectBody"></tbody>
         </table>
       </div>
+      <div class="pager" id="inspectPager"></div>
     </div>
     </div>
   </section>
@@ -2773,8 +2842,10 @@ body {
         <button type="button" class="btn btn-ghost btn-sm" onclick="saveCloudSettings()">保存设置</button>
         <button type="button" class="btn btn-secondary btn-sm" onclick="loadFromCloud()">从 GitHub 加载</button>
         <button type="button" class="btn btn-primary btn-sm" onclick="saveToCloud()">保存到 GitHub</button>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="downloadDataJson()">下载数据 JSON</button>
       </div>
       <div class="cloud-status" id="cloudStatus">未配置</div>
+      <div class="form-hint" style="margin-top:8px">博客式用法：点「下载数据 JSON」，提交到页面仓库的 <code>data/ops-data.json</code>；页面下次打开会自动读取。</div>
     </div>
     <div class="modal-foot">
       <button class="btn btn-ghost" onclick="clearCloudConfig()">清除本机配置</button>
@@ -3427,6 +3498,8 @@ DB.templateLib = toArray(DB.templateLib).map(function (t, i) {
 const state = {
   tab: 'inspect',
   statsRange: 'week',
+  inspectPage: 1,
+  inspectPageSize: 10,
   statsCustom: null,
   statsOpen: new Set(['MES']),
   filters: {
@@ -3636,9 +3709,15 @@ function renderInspect() {
   setText('inspectSystems', SYSTEMS.length);
   setText('inspectCount', total + ' 条');
 
+  const pageSize = state.inspectPageSize;
+  const pages = Math.max(1, Math.ceil(total / pageSize));
+  const page = Math.min(Math.max(1, state.inspectPage), pages);
+  state.inspectPage = page;
+  const pageList = list.slice((page - 1) * pageSize, page * pageSize);
+
   const body = $('inspectBody');
   if (!body) return;
-  body.innerHTML = list.length ? list.map(function (r) {
+  body.innerHTML = pageList.length ? pageList.map(function (r) {
     const errCount = (r.items || []).filter(function (it) { return it.result === '异常'; }).length;
     return '<tr>' +
       '<td><span class="cell-strong">' + esc(r.system) + '</span>' +
@@ -3655,12 +3734,59 @@ function renderInspect() {
       '</div></td>' +
     '</tr>';
   }).join('') : emptyRow(6, '暂无巡检记录', '点击右上角「新增巡检」开始记录');
+  renderInspectPager(total, page, pageSize);
+}
 
-  renderSpark();
-  renderInspectStats();
+function renderInspectPager(total, page, size) {
+  const box = $('inspectPager');
+  if (!box) return;
+  if (!total) {
+    box.innerHTML = '';
+    box.style.display = 'none';
+    return;
+  }
+  box.style.display = '';
+  const pages = Math.max(1, Math.ceil(total / size));
+  const nums = [];
+  function add(n) {
+    if (n >= 1 && n <= pages && nums.indexOf(n) < 0) nums.push(n);
+  }
+  add(1);
+  for (let i = page - 2; i <= page + 2; i++) add(i);
+  add(pages);
+  nums.sort(function (a, b) { return a - b; });
+  let btns = '';
+  let last = 0;
+  nums.forEach(function (n) {
+    if (last && n - last > 1) btns += '<span class="pager-ellipsis">…</span>';
+    btns += '<button type="button" class="pager-btn' + (n === page ? ' active' : '') + '" onclick="gotoInspectPage(' + n + ')">' + n + '</button>';
+    last = n;
+  });
+  const sizes = [10, 20, 50].map(function (s) {
+    return '<option value="' + s + '"' + (s === size ? ' selected' : '') + '>' + s + ' 条/页</option>';
+  }).join('');
+  box.innerHTML = '<div class="pager-info">共 ' + total + ' 条 · 第 ' + page + ' / ' + pages + ' 页</div>' +
+    '<div class="pager-pages">' +
+      '<button type="button" class="pager-btn" ' + (page <= 1 ? 'disabled' : '') + ' onclick="gotoInspectPage(' + (page - 1) + ')">上一页</button>' +
+      btns +
+      '<button type="button" class="pager-btn" ' + (page >= pages ? 'disabled' : '') + ' onclick="gotoInspectPage(' + (page + 1) + ')">下一页</button>' +
+    '</div>' +
+    '<div class="pager-size-wrap"><select class="select pager-size" onchange="setInspectPageSize(this.value)" aria-label="每页条数">' + sizes + '</select></div>';
+}
+
+function gotoInspectPage(page) {
+  state.inspectPage = Number(page) || 1;
+  renderInspect();
+}
+
+function setInspectPageSize(size) {
+  state.inspectPageSize = Number(size) || 10;
+  state.inspectPage = 1;
+  renderInspect();
 }
 
 function renderSpark() {
+
   const el = $('inspectSpark');
   if (!el) return;
   const counts = [];
@@ -3683,6 +3809,7 @@ function renderSpark() {
 function applyInspectFilters() {
   state.filters.inspect.system = val('inspectSystem');
   state.filters.inspect.date = val('inspectDate');
+  state.inspectPage = 1;
   renderInspect();
 }
 
@@ -3691,6 +3818,7 @@ function resetInspectFilters() {
   setVal('inspectDate', '');
   state.filters.inspect.system = '';
   state.filters.inspect.date = '';
+  state.inspectPage = 1;
   renderInspect();
 }
 
@@ -3827,6 +3955,7 @@ function saveInspect() {
   }
   persist('inspect');
   closeModal('inspectModal');
+  state.inspectPage = 1;
   renderInspect();
   toast('巡检记录已保存', 'ok');
 }
@@ -6522,6 +6651,32 @@ function clearCloudConfig() {
   });
 }
 
+async function initRepoData() {
+  if (cloudConfig()) return;
+  try {
+    const res = await fetch('data/ops-data.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) return;
+    const payload = await res.json();
+    if (!payload || payload.app !== 'ops-management' || !payload.data) return;
+    cloudRestore(payload.data);
+    toast('已加载 data/ops-data.json', 'ok');
+  } catch (e) { /* 本地打开或没有 data 文件时忽略 */ }
+}
+
+function downloadDataJson() {
+  const text = JSON.stringify(cloudSnapshot(), null, 2);
+  const blob = new Blob([text], { type: 'application/json;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ops-data.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+  toast('已下载 ops-data.json，提交到 data/ 目录即可持久化', 'ok');
+}
+
 function bindEvents() {
   document.querySelectorAll('.tab').forEach(function (btn) {
     btn.addEventListener('click', function () { switchTab(btn.dataset.tab); });
@@ -6561,6 +6716,7 @@ function init() {
 
   bindEvents();
   cloudInitUi();
+  initRepoData();
 
   const hashTab = location.hash.replace(/^#\/?/, '');
   switchTab(TABS.indexOf(hashTab) > -1 ? hashTab : 'inspect', false);
