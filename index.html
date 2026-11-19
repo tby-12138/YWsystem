@@ -1555,6 +1555,23 @@ textarea.input {
   .pager-size-wrap { margin-left: auto; }
 }
 
+
+/* ---------------- 云同步自动保存 ---------------- */
+.check-inline {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+}
+.check-inline input {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--brand);
+}
+
 </style>
 <style>
 /* ================= 视觉升级：深海军蓝顶栏 + 冷调画布 ================= */
@@ -2836,6 +2853,7 @@ body {
           <button type="button" class="pwd-toggle" onclick="togglePwd('cloud_token', this)" aria-label="显示/隐藏 Token"><svg class="ico"><use href="#i-eye"></use></svg></button>
         </div>
         <div class="form-hint">只授权这个私有数据仓库的 Contents 读写权限；Token 保存在本机浏览器 localStorage，请勿在公共电脑使用。</div>
+        <label class="check-inline" for="cloud_auto"><input type="checkbox" id="cloud_auto" checked> 改完自动保存到 GitHub（约 1.5 秒防抖）</label>
       </div>
       <div class="cloud-actions">
         <button type="button" class="btn btn-secondary btn-sm" onclick="testCloud()">测试连接</button>
@@ -3518,6 +3536,10 @@ const state = {
   unlocked: { ip: new Set(), account: new Set() },
   expanded: { ip: new Set(), account: new Set() },
   templateEditing: null,
+  cloudApplying: false,
+  cloudTimer: null,
+  cloudSaving: false,
+  cloudPending: false,
   images: { inspect: [], problem: [], update: [], template: [] },
   templateRefs: [],
   confirm: null
@@ -3666,6 +3688,7 @@ function persist(kind) {
     audit: function () { return writeStore(KEYS.audit, DB.audits); }
   };
   if (map[kind]) map[kind]();
+  if (!state.cloudApplying) scheduleCloudSave();
 }
 
 /* ---------------- 页面切换 ---------------- */
@@ -6445,6 +6468,8 @@ function openCloudModal() {
   setVal('cloud_branch', cfg.branch || 'main');
   setVal('cloud_path', cfg.path || 'data/ops-data.json');
   setVal('cloud_token', cfg.token || '');
+  const autoEl = $('cloud_auto');
+  if (autoEl) autoEl.checked = cfg.auto !== false;
   const last = cloudLast();
   if (cfg.owner) {
     cloudSetStatus('已配置' + (last ? ' · 上次同步 ' + last.time + (last.size ? ' · ' + fmtBytes(last.size) : '') : ' · 尚未同步'), '');
@@ -6465,7 +6490,8 @@ function readCloudForm() {
     toast('请填写 GitHub 用户名、私有数据仓库和 Token', 'warn');
     return null;
   }
-  return { owner: owner, repo: repo, branch: branch, path: path, token: token };
+  const auto = $('cloud_auto') ? !!$('cloud_auto').checked : true;
+  return { owner: owner, repo: repo, branch: branch, path: path, token: token, auto: auto };
 }
 
 function saveCloudSettings() {
@@ -6559,27 +6585,33 @@ function cloudSnapshot() {
 }
 
 function cloudRestore(data) {
-  const arrays = ['inspections', 'records', 'problems', 'updates', 'ips', 'accounts', 'soft', 'config', 'audits', 'templateLib'];
-  arrays.forEach(function (k) { if (Array.isArray(data[k])) DB[k] = data[k]; });
-  ['templates', 'templateImages', 'ipCategories', 'accountCategories'].forEach(function (k) {
-    if (data[k] && typeof data[k] === 'object') DB[k] = data[k];
-  });
-  ['inspect', 'templates', 'templateImages', 'templateLib', 'record', 'problem', 'update', 'ip', 'ipCats', 'account', 'accountCats', 'soft', 'config', 'audit'].forEach(function (k) { persist(k); });
-  renderInspect();
-  renderRecordFilterOptions();
-  renderRecords();
-  renderProblems();
-  renderUpdates();
-  renderCategories('ip');
-  renderCategories('account');
-  renderSoftware();
-  renderConfig();
+  state.cloudApplying = true;
+  try {
+    const arrays = ['inspections', 'records', 'problems', 'updates', 'ips', 'accounts', 'soft', 'config', 'audits', 'templateLib'];
+    arrays.forEach(function (k) { if (Array.isArray(data[k])) DB[k] = data[k]; });
+    ['templates', 'templateImages', 'ipCategories', 'accountCategories'].forEach(function (k) {
+      if (data[k] && typeof data[k] === 'object') DB[k] = data[k];
+    });
+    ['inspect', 'templates', 'templateImages', 'templateLib', 'record', 'problem', 'update', 'ip', 'ipCats', 'account', 'accountCats', 'soft', 'config', 'audit'].forEach(function (k) { persist(k); });
+    renderInspect();
+    renderRecordFilterOptions();
+    renderRecords();
+    renderProblems();
+    renderUpdates();
+    renderCategories('ip');
+    renderCategories('account');
+    renderSoftware();
+    renderConfig();
+  } finally {
+    state.cloudApplying = false;
+  }
 }
 
-async function saveToCloud() {
-  const cfg = readCloudForm();
+async function saveCloudData(cfg, silent) {
   if (!cfg) return;
-  cloudSetStatus('正在保存到 GitHub...');
+  if (state.cloudSaving) { state.cloudPending = true; return; }
+  state.cloudSaving = true;
+  if (!silent) cloudSetStatus('正在保存到 GitHub...');
   try {
     const snapshot = cloudSnapshot();
     const text = JSON.stringify(snapshot, null, 2);
@@ -6593,11 +6625,39 @@ async function saveToCloud() {
     cloudSaveConfig(cfg);
     cloudInitUi();
     cloudSetLast(size);
-    cloudSetStatus('已保存到 GitHub' + (result && result.commit ? ' · commit ' + String(result.commit.sha || '').slice(0, 7) : '') + ' · ' + fmtBytes(size), 'ok');
-    toast('已保存到 GitHub', 'ok');
+    cloudSetStatus((silent ? '已自动保存' : '已保存到 GitHub') +
+      (result && result.commit ? ' · commit ' + String(result.commit.sha || '').slice(0, 7) : '') +
+      ' · ' + fmtBytes(size), 'ok');
+    if (!silent) toast('已保存到 GitHub', 'ok');
   } catch (e) {
-    cloudSetStatus('保存失败：' + (e && e.message ? e.message : '网络错误'), 'err');
+    cloudSetStatus((silent ? '自动保存失败：' : '保存失败：') + (e && e.message ? e.message : '网络错误'), 'err');
+    if (!silent) toast('保存到 GitHub 失败', 'err');
+  } finally {
+    state.cloudSaving = false;
+    if (state.cloudPending) {
+      state.cloudPending = false;
+      scheduleCloudSave();
+    }
   }
+}
+
+function saveToCloud() {
+  const cfg = readCloudForm();
+  if (!cfg) return;
+  cloudSaveConfig(cfg);
+  cloudInitUi();
+  return saveCloudData(cfg, false);
+}
+
+function scheduleCloudSave() {
+  const cfg = cloudConfig();
+  if (!cfg || cfg.auto === false) return;
+  if (state.cloudApplying) return;
+  if (state.cloudTimer) clearTimeout(state.cloudTimer);
+  state.cloudTimer = setTimeout(function () {
+    state.cloudTimer = null;
+    saveCloudData(cfg, true);
+  }, 1500);
 }
 
 function loadFromCloud() {
@@ -6652,7 +6712,24 @@ function clearCloudConfig() {
 }
 
 async function initRepoData() {
-  if (cloudConfig()) return;
+  const cfg = cloudConfig();
+  if (cfg) {
+    try {
+      const file = await cloudGet(cfg);
+      if (file) {
+        const payload = JSON.parse(file.text);
+        if (payload && payload.app === 'ops-management' && payload.data) {
+          cloudRestore(payload.data);
+          cloudSetLast(new TextEncoder().encode(file.text).length);
+          cloudSetStatus('已从 GitHub 同步', 'ok');
+          toast('已从 GitHub 同步', 'ok');
+          return;
+        }
+      }
+    } catch (e) {
+      cloudSetStatus('自动加载失败：' + (e && e.message ? e.message : '网络错误'), 'err');
+    }
+  }
   try {
     const res = await fetch('data/ops-data.json?t=' + Date.now(), { cache: 'no-store' });
     if (!res.ok) return;
