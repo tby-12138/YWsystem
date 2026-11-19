@@ -1,77 +1,9 @@
 {
   "app": "ops-management",
   "version": 1,
-  "updatedAt": "2026-11-19T02:46:27.548Z",
+  "updatedAt": "2026-11-19T03:48:13.431Z",
   "data": {
     "inspections": [
-      {
-        "id": 57,
-        "system": "一卡通",
-        "subsystem": "乌干达金贾一卡通",
-        "date": "2026-11-19",
-        "time": "2026-11-19 12:53:00",
-        "reporter": "李明",
-        "remark": "",
-        "templateId": null,
-        "templateName": "",
-        "images": [],
-        "items": [
-          {
-            "name": "制卡服务状态",
-            "result": "正常"
-          },
-          {
-            "name": "读卡器通讯状态",
-            "result": "正常"
-          },
-          {
-            "name": "门禁数据同步",
-            "result": "正常"
-          },
-          {
-            "name": "订单接口连通性",
-            "result": "正常"
-          },
-          {
-            "name": "数据库运行状态",
-            "result": "异常"
-          }
-        ]
-      },
-      {
-        "id": 55,
-        "system": "MES",
-        "subsystem": "塔什干钢铁MES",
-        "date": "2026-11-19",
-        "time": "2026-11-19 12:35:00",
-        "reporter": "张志远",
-        "remark": "",
-        "templateId": null,
-        "templateName": "",
-        "images": [],
-        "items": [
-          {
-            "name": "生产数据采集服务",
-            "result": "正常"
-          },
-          {
-            "name": "能源模块数据同步",
-            "result": "正常"
-          },
-          {
-            "name": "报表服务状态",
-            "result": "正常"
-          },
-          {
-            "name": "数据库连接状态",
-            "result": "正常"
-          },
-          {
-            "name": "磁盘空间使用率",
-            "result": "正常"
-          }
-        ]
-      },
       {
         "id": 56,
         "system": "NS",
