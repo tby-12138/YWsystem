@@ -137,6 +137,7 @@ GitHub → Settings → Developer settings → Personal access tokens → Fine-g
 
 - 点「保存到 GitHub」成功 → 提示「已保存到 GitHub，正在清理本地缓存并重新加载…」→ 清掉本地数据缓存 → 自动刷新；云配置和 Token 保留，刷新后从 Git 重新加载。
 - 自动保存（改完约 1.5 秒）→ 提示「已自动保存到 GitHub」，**不刷新**页面，避免打断编辑。需要干净重载时点「保存到 GitHub」。
+- 保存遇到 **409 冲突**（另一个标签页或自动保存先提交、SHA 过期）→ 自动重新拉取最新 SHA 再提交一次；仍冲突才提示稍后重试。不需要手动点「从 GitHub 加载」。
 
 ### 每个页面的「同步到 Git」
 

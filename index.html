@@ -6542,22 +6542,32 @@ async function cloudGet(cfg) {
 }
 
 async function cloudPut(cfg, text, sha) {
-  const body = { message: 'Update ops data ' + localStamp(), content: b64Encode(text), branch: cfg.branch };
-  if (sha) body.sha = sha;
-  const res = await fetch(cloudContentUrl(cfg), {
-    method: 'PUT',
-    headers: Object.assign({}, cloudHeaders(cfg), { 'Content-Type': 'application/json' }),
-    body: JSON.stringify(body)
-  });
-  if (res.status === 409) throw new Error('云端文件已被更新，请先「从 GitHub 加载」再保存');
-  if (res.status === 401) throw new Error('Token 无效或已过期');
-  if (res.status === 403) throw new Error('Token 权限不足或被限流');
-  if (!res.ok) {
-    let detail = '';
-    try { const j = await res.json(); detail = j && j.message ? '：' + j.message : ''; } catch (e) { /* ignore */ }
-    throw new Error('写入失败：HTTP ' + res.status + detail);
+  async function attempt(shaValue) {
+    const body = { message: 'Update ops data ' + localStamp(), content: b64Encode(text), branch: cfg.branch };
+    if (shaValue) body.sha = shaValue;
+    const res = await fetch(cloudContentUrl(cfg), {
+      method: 'PUT',
+      headers: Object.assign({}, cloudHeaders(cfg), { 'Content-Type': 'application/json' }),
+      body: JSON.stringify(body)
+    });
+    if (res.status === 409) return { conflict: true };
+    if (res.status === 401) throw new Error('Token 无效或已过期');
+    if (res.status === 403) throw new Error('Token 权限不足或被限流');
+    if (!res.ok) {
+      let detail = '';
+      try { const j = await res.json(); detail = j && j.message ? '：' + j.message : ''; } catch (e) { /* ignore */ }
+      throw new Error('写入失败：HTTP ' + res.status + detail);
+    }
+    return { data: await res.json() };
   }
-  return res.json();
+
+  let result = await attempt(sha);
+  if (result.conflict) {
+    const latest = await cloudGet(cfg);
+    result = await attempt(latest ? latest.sha : null);
+  }
+  if (result.conflict) throw new Error('云端文件连续被更新，请稍后重试');
+  return result.data;
 }
 
 function cloudSnapshot() {
