@@ -6561,10 +6561,18 @@ async function cloudPut(cfg, text, sha) {
 }
 
 function cloudSnapshot() {
+  const cfg = cloudConfig();
   return {
     app: 'ops-management',
     version: 1,
     updatedAt: new Date().toISOString(),
+    cloud: cfg ? {
+      owner: cfg.owner,
+      repo: cfg.repo,
+      branch: cfg.branch,
+      path: cfg.path,
+      auto: cfg.auto !== false
+    } : null,
     data: JSON.parse(JSON.stringify({
       inspections: DB.inspections,
       templates: DB.templates,
@@ -6608,8 +6616,8 @@ function cloudRestore(data) {
 }
 
 async function saveCloudData(cfg, silent) {
-  if (!cfg) return;
-  if (state.cloudSaving) { state.cloudPending = true; return; }
+  if (!cfg) return false;
+  if (state.cloudSaving) { state.cloudPending = true; return false; }
   state.cloudSaving = true;
   if (!silent) cloudSetStatus('正在保存到 GitHub...');
   try {
@@ -6618,7 +6626,7 @@ async function saveCloudData(cfg, silent) {
     const size = new TextEncoder().encode(text).length;
     if (size > 5 * 1024 * 1024) {
       cloudSetStatus('数据超过 5MB，GitHub 同步可能失败，请减少图片后再试。', 'warn');
-      return;
+      return false;
     }
     const current = await cloudGet(cfg);
     const result = await cloudPut(cfg, text, current ? current.sha : null);
@@ -6628,10 +6636,12 @@ async function saveCloudData(cfg, silent) {
     cloudSetStatus((silent ? '已自动保存' : '已保存到 GitHub') +
       (result && result.commit ? ' · commit ' + String(result.commit.sha || '').slice(0, 7) : '') +
       ' · ' + fmtBytes(size), 'ok');
-    if (!silent) toast('已保存到 GitHub', 'ok');
+    if (silent) toast('已自动保存到 GitHub', 'ok');
+    return true;
   } catch (e) {
     cloudSetStatus((silent ? '自动保存失败：' : '保存失败：') + (e && e.message ? e.message : '网络错误'), 'err');
     if (!silent) toast('保存到 GitHub 失败', 'err');
+    return false;
   } finally {
     state.cloudSaving = false;
     if (state.cloudPending) {
@@ -6641,12 +6651,30 @@ async function saveCloudData(cfg, silent) {
   }
 }
 
-function saveToCloud() {
+const DATA_CACHE_KEYS = [
+  KEYS.inspect, KEYS.templates, KEYS.templateImages, KEYS.templateLib,
+  KEYS.records, KEYS.problems, KEYS.updates, KEYS.ips, KEYS.ipCategories,
+  KEYS.accounts, KEYS.accountCategories, KEYS.soft, KEYS.config, KEYS.audit
+];
+
+function clearDataCache() {
+  DATA_CACHE_KEYS.forEach(function (key) {
+    try { localStorage.removeItem(key); } catch (e) {}
+  });
+}
+
+async function saveToCloud() {
   const cfg = readCloudForm();
   if (!cfg) return;
   cloudSaveConfig(cfg);
   cloudInitUi();
-  return saveCloudData(cfg, false);
+  const ok = await saveCloudData(cfg, false);
+  if (!ok) return;
+  toast('已保存到 GitHub，正在清理本地缓存并重新加载…', 'ok');
+  setTimeout(function () {
+    clearDataCache();
+    location.reload();
+  }, 1400);
 }
 
 function scheduleCloudSave() {
@@ -6713,7 +6741,7 @@ function clearCloudConfig() {
 
 async function initRepoData() {
   const cfg = cloudConfig();
-  if (cfg) {
+  if (cfg && cfg.token) {
     try {
       const file = await cloudGet(cfg);
       if (file) {
@@ -6735,9 +6763,23 @@ async function initRepoData() {
     if (!res.ok) return;
     const payload = await res.json();
     if (!payload || payload.app !== 'ops-management' || !payload.data) return;
+    if (payload.cloud && !cloudConfig()) restoreCloudMeta(payload.cloud);
     cloudRestore(payload.data);
     toast('已加载 data/ops-data.json', 'ok');
   } catch (e) { /* 本地打开或没有 data 文件时忽略 */ }
+}
+
+function restoreCloudMeta(meta) {
+  if (!meta || !meta.owner || !meta.repo) return;
+  cloudSaveConfig({
+    owner: meta.owner,
+    repo: meta.repo,
+    branch: meta.branch || 'main',
+    path: meta.path || 'data/ops-data.json',
+    token: '',
+    auto: meta.auto !== false
+  });
+  cloudInitUi();
 }
 
 function downloadDataJson() {

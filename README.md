@@ -107,6 +107,27 @@ GitHub → Settings → Developer settings → Personal access tokens → Fine-g
 - 两个人同时编辑同一份数据仍可能冲突；这是给个人使用设计的。
 - 要真正多用户/实时数据库，请用 Python 后端 + SQLite，Git 只放代码和备份。
 
+### 配置也会写进 Git
+
+保存时数据文件顶层会多一个 `cloud` 字段：
+
+```json
+{
+  "owner": "tby-12138",
+  "repo": "YWsystem-data",
+  "branch": "main",
+  "path": "data/ops-data.json",
+  "auto": true
+}
+```
+
+只包含非敏感配置，**不包含 Token**；Token 仍然只在本机浏览器 localStorage。如果本机配置丢了，页面会从数据文件的 `cloud` 字段恢复这些配置，Token 需要重新填。
+
+### 保存后的行为
+
+- 点「保存到 GitHub」成功 → 提示「已保存到 GitHub，正在清理本地缓存并重新加载…」→ 清掉本地数据缓存 → 自动刷新；云配置和 Token 保留，刷新后从 Git 重新加载。
+- 自动保存（改完约 1.5 秒）→ 提示「已自动保存到 GitHub」，**不刷新**页面，避免打断编辑。需要干净重载时点「保存到 GitHub」。
+
 ---
 
 # 四、部署页面
